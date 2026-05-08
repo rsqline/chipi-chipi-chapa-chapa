@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="container">
+<div class="container">
         <div class="decoration dec-1">🎈</div>
         <div class="decoration dec-2">✨</div>
         <div class="decoration dec-3">🌸</div>
@@ -22,11 +21,8 @@
         Пусть все твои желания и мечты сбываются, а жизнь дарит все больше новых радостей.</p>
 
         <div class="images-grid">
-            <!-- Милая собачка в колпаке -->
             <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?q=80&w=600&auto=format&fit=crop" alt="Праздничный щенок">
-            <!-- Красивый капкейк -->
             <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=600&auto=format&fit=crop" alt="Тортик">
-            <!-- Праздничные шарики -->
             <img src="https://magichouse42.ru/wp-content/uploads/2018/03/Smajlik-2.jpg?q=80&w=600&auto=format&fit=crop" alt="Шарики">
         </div>
 
@@ -37,7 +33,24 @@
         <div class="footer-text">
             С днём рождения тебя, моя любимая сестра! ❤️💕
         </div>
+        
+        <div class="click-hint">(Кликни в любом месте экрана для сюрприза 🎵)</div>
     </div>
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('bgMusic');
+            if (audio.paused) {
+                audio.volume = 0.5;
+                audio.play();
+                document.querySelector('.click-hint').style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>
